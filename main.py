@@ -1,3 +1,4 @@
+import random
 import requests
 from typing import List
 
@@ -15,7 +16,6 @@ user_agents: List[str] = [
     'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:13.0) Gecko/20100101 Firefox/13.0.1',
     'Mozilla/5.0 (compatible; Baiduspider/2.0; +http://www.baidu.com/search/spider.html)',
     'Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/5.0)',
-    'Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1; Trident/4.0; .NET CLR 2.0.50727; .NET CLR 3.0.4506.2152; .NET CLR 3.5.30729)',
     'Opera/9.80 (Windows NT 5.1; U; en) Presto/2.10.289 Version/12.01',
     'Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1; SV1; .NET CLR 2.0.50727)',
     'Mozilla/5.0 (Windows NT 5.1; rv:5.0.1) Gecko/20100101 Firefox/5.0.1',
@@ -25,8 +25,14 @@ user_agents: List[str] = [
 ]
 
 
+def random_user_agent() -> str:
+    return random.choice(user_agents)
+
+
 def main() -> None:
     print('Hello world')
+    print(random_user_agent())
+
 
 if __name__ == '__main__':
     main()
